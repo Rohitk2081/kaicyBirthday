@@ -1,245 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown to Kaicy's Birthday!</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown to Kaicy's Birthday!</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            background-image: url('kaicy.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-        }
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        /* Fullscreen sections */
-        section {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            scroll-snap-align: start;
-            position: relative;
-            background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
-        /* Scroll snapping */
-        html {
-            scroll-behavior: smooth;
-            scroll-snap-type: y mandatory;
-            height: 100%;
-            margin: 0;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background-image: url('kaicy.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
 
-        /* Section 1 - Countdown */
-        #countdown-section {
-            background: rgba(0, 0, 0, 0.6);
-        }
+    section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      scroll-snap-align: start;
+      position: relative;
+      background: rgba(0, 0, 0, 0.6);
+    }
 
-        .countdown-container {
-            padding: 20px;
-            border-radius: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(8px);
-            max-width: 90%;
-            margin: 0 auto;
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      height: 100%;
+      margin: 0;
+    }
 
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.5em;
-            color: #ffeb3b;
-            margin-bottom: 20px;
-        }
+    #countdown-section {
+      background: rgba(0, 0, 0, 0.6);
+    }
 
-        .countdown {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    .countdown-container {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      max-width: 90%;
+      margin: 0 auto;
+    }
 
-        .time-unit {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 10px;
-            border-radius: 15px;
-            flex: 1 1 150px; /* Flex-grow and flex-basis for responsiveness */
-        }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5em;
+      color: #ffeb3b;
+      margin-bottom: 20px;
+    }
 
-        .time-value {
-            font-size: 2em;
-            color: #ffeb3b;
-        }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        .unit-label {
-            font-size: 1em;
-            color: #ffeb3b;
-        }
+    .time-unit {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 10px;
+      border-radius: 15px;
+      flex: 1 1 150px;
+    }
 
-        /* Section 2 - Poem */
-        #poem-section {
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-        }
+    .time-value {
+      font-size: 2em;
+      color: #ffeb3b;
+    }
 
-        .poem-container {
-            padding: 20px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(8px);
-            max-width: 90%;
-            margin: 0 auto;
-        }
+    .unit-label {
+      font-size: 1em;
+      color: #ffeb3b;
+    }
 
-        .note-section h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.5em;
-            color: #ffeb3b;
-            margin-bottom: 20px;
-        }
+    #poem-section {
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+    }
 
-        .poem {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
+    .poem-container {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      max-width: 90%;
+      margin: 0 auto;
+    }
 
-        footer {
-            margin-top: 20px;
-            font-size: 1.2em;
-            font-family: 'Great Vibes', cursive;
-            color: #ffeb3b;
-        }
+    .poem-container h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5em;
+      color: #ffeb3b;
+      margin-bottom: 20px;
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1, .note-section h2 {
-                font-size: 2em;
-            }
-            
-            .countdown-container {
-                padding: 15px;
-            }
+    .poem {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
 
-            .time-unit {
-                flex: 1 1 100px;
-            }
+    footer {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-family: 'Great Vibes', cursive;
+      color: #ffeb3b;
+    }
 
-            .poem-container {
-                padding: 15px;
-            }
+    @media (max-width: 768px) {
+      h1, .poem-container h2 {
+        font-size: 2em;
+      }
 
-            .poem {
-                font-size: 1em;
-            }
-        }
+      .countdown-container {
+        padding: 15px;
+      }
 
-        @media (max-width: 576px) {
-            h1, .note-section h2 {
-                font-size: 1.5em;
-            }
-            
-            .countdown-container {
-                padding: 10px;
-            }
+      .time-unit {
+        flex: 1 1 100px;
+      }
 
-            .time-unit {
-                flex: 1 1 80px;
-            }
+      .poem-container {
+        padding: 15px;
+      }
 
-            .poem-container {
-                padding: 10px;
-            }
+      .poem {
+        font-size: 1em;
+      }
+    }
 
-            .poem {
-                font-size: 0.9em;
-            }
-        }
-    </style>
+    @media (max-width: 576px) {
+      h1, .poem-container h2 {
+        font-size: 1.5em;
+      }
+
+      .countdown-container {
+        padding: 10px;
+      }
+
+      .time-unit {
+        flex: 1 1 80px;
+      }
+
+      .poem-container {
+        padding: 10px;
+      }
+
+      .poem {
+        font-size: 0.9em;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Section 1: Countdown -->
-    <section id="countdown-section">
-        <div class="countdown-container">
-            <h1>Countdown to Kaicy's Birthday!</h1>
-            <div class="countdown">
-                <div class="time-unit">
-                    <span class="time-value" id="days">00</span>
-                    <div class="unit-label">Days</div>
-                </div>
-                <div class="time-unit">
-                    <span class="time-value" id="hours">00</span>
-                    <div class="unit-label">Hours</div>
-                </div>
-                <div class="time-unit">
-                    <span class="time-value" id="minutes">00</span>
-                    <div class="unit-label">Minutes</div>
-                </div>
-                <div class="time-unit">
-                    <span class="time-value" id="seconds">00</span>
-                    <div class="unit-label">Seconds</div>
-                </div>
-            </div>
+  <!-- Section 1: Countdown -->
+  <section id="countdown-section">
+    <div class="countdown-container">
+      <h1>Countdown to Kaicy's Birthday!</h1>
+      <div class="countdown">
+        <div class="time-unit">
+          <span class="time-value" id="days">00</span>
+          <div class="unit-label">Days</div>
         </div>
-    </section>
-
-    <!-- Section 2: Poem -->
-    <section id="poem-section">
-        <div class="poem-container">
-            <h2>A Birthday Note for Kaicy</h2>
-            <p class="poem">
-                Another year older, but still just as bright,<br>
-                With every smile, you light up the night.<br>
-                Your kindness and love touch all those you see,<br>
-                A heart full of gold, that’s who you’ll always be.<br>
-                So here’s to your birthday, may it be full of cheer,<br>
-                And may happiness follow you throughout the year.<br>
-            </p>
+        <div class="time-unit">
+          <span class="time-value" id="hours">00</span>
+          <div class="unit-label">Hours</div>
         </div>
-    </section>
+        <div class="time-unit">
+          <span class="time-value" id="minutes">00</span>
+          <div class="unit-label">Minutes</div>
+        </div>
+        <div class="time-unit">
+          <span class="time-value" id="seconds">00</span>
+          <div class="unit-label">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Section 2: Poem -->
+  <section id="poem-section">
+    <div class="poem-container">
+      <h2>A Birthday Note for Kaicy</h2>
+      <p class="poem">
+        Another year older, but still just as bright,<br>
+        With every smile, you light up the night.<br>
+        Your kindness and love touch all those you see,<br>
+        A heart full of gold, that’s who you’ll always be.<br>
+        So here’s to your birthday, may it be full of cheer,<br>
+        And may happiness follow you throughout the year.<br>
+      </p>
+    </div>
+  </section>
 
-    <!-- Countdown Script -->
-    <script>
-        const birthday = new Date('September 28, 2025 00:00:00').getTime();
+  <!-- Countdown Script -->
+  <script>
+    const birthday = new Date('September 28, 2025 00:00:00').getTime();
 
-        const countdown = setInterval(() => {
-            const now = new Date().getTime();
-            const difference = birthday - now;
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = birthday - now;
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+      if (difference < 0) {
+        clearInterval(countdown);
+        document.querySelector('.countdown').innerHTML = "<h2>🎉 Happy Birthday, Kaicy! 🎂</h2>";
+        return;
+      }
 
-            document.getElementById('days').innerText = days;
-            document.getElementById('hours').innerText = hours;
-            document.getElementById('minutes').innerText = minutes;
-            document.getElementById('seconds').innerText = seconds;
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            if (difference < 0) {
-                clearInterval(countdown);
-                document.querySelector('.countdown').innerHTML = "<h2>Happy Birthday, Kaicy!</h2>";
-            }
-        }, 1000);
-    </script>
+      document.getElementById('days').innerText = days;
+      document.getElementById('hours').innerText = hours;
+      document.getElementById('minutes').innerText = minutes;
+      document.getElementById('seconds').innerText = seconds;
+    }, 1000);
+  </script>
 
 </body>
 </html>
